@@ -13,13 +13,14 @@ class aula6
     {
         int opcao = 0;
 
-        while (opcao != 4)
+        while (opcao != 5)
         {
             Console.WriteLine("MENU PRINCIPAL");
             Console.WriteLine("1 - Cadastrar personagens");
             Console.WriteLine("2 - Formar equipe");
             Console.WriteLine("3 - Exibir equipe");
-            Console.WriteLine("4 - Sair");
+            Console.WriteLine("4 - Pontuação total da equipe");
+            Console.WriteLine("5 - Sair");
             Console.WriteLine("Escolha uma opção:");
             opcao = int.Parse(Console.ReadLine());
 
@@ -36,6 +37,10 @@ class aula6
                 exibir(escolha1, escolha2, escolha3, poderEscolha1, poderEscolha2, poderEscolha3);
             }
             else if (opcao == 4)
+            {
+                ponttotal();
+            }
+            else if (opcao == 5)
             {
                 Console.WriteLine("Encerrando o programa...");
             }
@@ -55,8 +60,6 @@ class aula6
         string poder = null;
         int pontuacao = 0;
         int conta = 0;
-
-        File.WriteAllText("personagens.txt", "");
         Console.WriteLine("Quantos personagens você quer digitar? (mínimo 3 e máximo 5)");
         int n = int.Parse(Console.ReadLine());
         if (n < 3 || n > 5)
